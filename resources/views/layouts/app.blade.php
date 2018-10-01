@@ -8,12 +8,22 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset ('fonts-icons/font-awesome.min.css') }}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="{{ asset ('fonts-icons/ionicons.min.css') }}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset ('dist/css/AdminLTE.min.css') }}">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="{{ asset ('plugins/iCheck/square/blue.css') }}">
 </head>
-<body>
+<body class="hold-transition register-page">
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
@@ -29,7 +39,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', 'Lending system') }}
                     </a>
                 </div>
 
@@ -79,5 +89,16 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <!-- iCheck -->
+    <script src="{{ asset('plugins/iCheck/icheck.min.js')}}"></script>
+    <script>
+      $(function () {
+        $('input').iCheck({
+          checkboxClass: 'icheckbox_square-blue',
+          radioClass: 'iradio_square-blue',
+          increaseArea: '20%' // optional
+        });
+      });
+    </script>
 </body>
 </html>

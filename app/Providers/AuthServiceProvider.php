@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace hsdntknow\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'App\Model' => 'App\Policies\ModelPolicy',
+        'hsdntknow\Model' => 'hsdntknow\Policies\ModelPolicy',
     ];
 
     /**
@@ -34,14 +34,19 @@ class AuthServiceProvider extends ServiceProvider
             return $user->hasAccess(['create-post']);
         });
 
-        Gate::define('update-post', function ($user, \App\Post $post) {
+        Gate::define('update-post', function ($user, \hsdntknow\Post $post) {
             return $user->hasAccess(['update-post']) or $user->id == $post->user_id;
         });
         Gate::define('publish-post', function ($user) {
             return $user->hasAccess(['publish-post']);
         });
         Gate::define('see-all-drafts', function ($user) {
-            return $user->inRole('editor');
+          if ($user->hasAccess(['publish-post']) == true) {
+            return $user->inRole('checkadmin');
+          }
+          else{
+            return $user->inRole('admin');
+          }
         });
     }
 }

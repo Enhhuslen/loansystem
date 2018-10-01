@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace hsdntknow\Http\Controllers\Auth;
 
-use App\User;
-use App\Http\Controllers\Controller;
+use hsdntknow\User;
+use hsdntknow\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -76,7 +76,7 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
-        $roles=\App\Role::orderBy('name')->pluck('name','id');
+        $roles=\hsdntknow\Role::orderBy('name')->pluck('name','id');
         return view('auth.register',compact('roles'));
     }
 }

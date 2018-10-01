@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace hsdntknow;
 
 use Illuminate\Database\Eloquent\Model;
 

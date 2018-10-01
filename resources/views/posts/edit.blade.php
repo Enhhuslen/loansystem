@@ -43,11 +43,6 @@
                                 <button type="submit" class="btn btn-primary">
                                     Update
                                 </button>
-                                @can('publish-post')
-                                <a href="{{ route('publish_post', ['post' => $post->id]) }}" class="btn btn-primary">
-                                    Publish
-                                </a>
-                                @endcan
                                 <a href="{{ route('list_posts') }}" class="btn btn-primary">
                                     Cancel
                                 </a>

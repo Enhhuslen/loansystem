@@ -19,9 +19,9 @@
                                 <p>{{ str_limit($post->body, 50) }}</p>
                                 <p>
                                 @can('publish-post')
-                                    <a href="{{ route('publish_post', ['id' => $post->id]) }}" class="btn btn-sm btn-default" role="button">Publish</a> 
+                                    <a href="{{ route('publish_post', ['id' => $post->id]) }}" class="btn btn-default" role="button">Publish</a>
                                 @endcan
-                                    <a href="{{ route('edit_post', ['id' => $post->id]) }}" class="btn btn-default" role="button">Edit</a> 
+                                    <a href="{{ route('edit_post', ['id' => $post->id]) }}" class="btn btn-default" role="button">Edit</a>
                                 </p>
                             </div>
                             </div>

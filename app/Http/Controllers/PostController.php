@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace hsdntknow\Http\Controllers;
 
-use App\Post;
+use hsdntknow\Post;
 use Gate;
 use Illuminate\Http\Request;
 

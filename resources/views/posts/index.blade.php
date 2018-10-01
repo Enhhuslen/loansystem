@@ -22,7 +22,7 @@
                                 <p>{{ str_limit($post->body, 50) }}</p>
                                 @can('update-post', $post)
                                 <p>
-                                    <a href="{{ route('edit_post', ['id' => $post->id]) }}" class="btn btn-sm btn-default" role="button">Edit</a> 
+                                    <a href="{{ route('edit_post', ['id' => $post->id]) }}" class="btn btn-sm btn-default" role="button">Edit</a>
                                 </p>
                                 @endcan
                             </div>

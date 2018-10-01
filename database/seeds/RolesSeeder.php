@@ -12,21 +12,38 @@ class RolesSeeder extends Seeder
      */
     public function run()
     {
-        $author = Role::create([
-            'name'        => 'Author',
-            'slug'        => 'author',
+        $user = Role::create([
+            'name'        => 'User',
+            'slug'        => 'user',
             'permissions' => json_encode([
                 'create-post' => true,
             ]),
         ]);
 
-        $editor = Role::create([
-            'name'        => 'Editor',
-            'slug'        => 'editor',
+        $admin = Role::create([
+            'name'        => 'Admin',
+            'slug'        => 'admin',
+            'permissions' => json_encode([
+                'update-post'  => true,
+            ]),
+        ]);
+
+        $checkadmin = Role::create([
+            'name'        => 'Check Admin',
+            'slug'        => 'checkadmin',
             'permissions' => json_encode([
                 'update-post'  => true,
                 'publish-post' => true,
             ]),
+        ]);
+
+        $superadmin = Role::create([
+          'name'        => 'Super Admin',
+          'slug'        => 'superadmin',
+          'permissions' => json_encode([
+              'update-post'  => true,
+              'publish-post' => true,
+          ]),
         ]);
     }
 }

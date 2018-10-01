@@ -42,8 +42,12 @@ Route::group(['prefix' => 'posts'], function () {
     Route::post('/edit/{post}', 'PostController@update')
         ->name('update_post')
         ->middleware('can:update-post,post');
-        
+
     Route::get('/publish/{post}', 'PostController@publish')
         ->name('publish_post')
         ->middleware('can:publish-post');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

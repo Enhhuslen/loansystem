@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('Lending system', 'Lending system'),
 
     /*
     |--------------------------------------------------------------------------
@@ -171,11 +171,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        hsdntknow\Providers\AppServiceProvider::class,
+        hsdntknow\Providers\AuthServiceProvider::class,
+        // hsdntknow\Providers\BroadcastServiceProvider::class,
+        hsdntknow\Providers\EventServiceProvider::class,
+        hsdntknow\Providers\RouteServiceProvider::class,
 
     ],
 
